@@ -1,0 +1,1 @@
+let apple = ['apple', 332, 'sad', 23];
