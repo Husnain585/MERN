@@ -1,0 +1,9 @@
+swapping pr 2 nested loops lagne se bubble sort 
+ds are mainly two types linear and non-linear 
+linear datastructure
+non linear datastructure
+iterations means how many times each loop is executed
+loops
+conditions
+scopes
+varibles

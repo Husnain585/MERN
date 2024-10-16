@@ -1,0 +1,3 @@
+obj is basically
+swello copy
+rest operator always called when an expression receives the value
