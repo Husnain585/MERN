@@ -1,0 +1,10 @@
+coercion
+hoisting
+destructing
+obj promises life cycle
+asyncchronous
+map or foreach differences
+chain calling
+shallow copy deep copy differences
+
+where to used for loop and where to used while loops

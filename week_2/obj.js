@@ -1,13 +1,13 @@
-// const obj = {
-//     name : "husnain",
-//     age: 2002,
-//     course: "Mern",
-//     code:{
-//         name: "023",
-//         code: Number
-//     },
-//     array: [1,2,234,5,]
-// }
+const obj = {
+    name : "husnain",
+    age: 2002,
+    course: "Mern",
+    code:{
+        name: "023",
+        code: Number
+    },
+    array: [1,2,234,5,]
+}
 
 // console.log(typeof obj.code.code);
 
@@ -49,19 +49,19 @@
 // const b = [...newarr];
 // console.log(b);
 
-const main = (a,b)=> {
+const main = (a,b, ...e)=> {
     console.log(a);
     console.log(b);
+    console.log(e);
 }
 let arrray = [1,2,3,4,5];
 
 main(...arrray);
 
 const userId = (nmae,age)=> {
-    console.log(a);
-    console.log(b);
+    console.log(name);
+    console.log(age);
 }
 
+let {name, age} = obj;
 userId(obj);
-
-// let {name, age} = obj;

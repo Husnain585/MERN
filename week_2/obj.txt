@@ -1,3 +1,16 @@
 obj is basically
 swello copy
 rest operator always called when an expression receives the value
+
+loops are counter type 
+while loops are conditional type ->  by defualt condition is applied condition based on 
+where condition is defined we implement the for loops
+break statements used to exsist form the loop
+continue statements used to move its parent block if the condition is true 
+{
+this keyword 
+apply, bind, the call
+}
+callback funtion khud se call hota hai 
+map retrun an array as result
+foreach is used for sorting like results
