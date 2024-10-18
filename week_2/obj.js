@@ -49,19 +49,21 @@ const obj = {
 // const b = [...newarr];
 // console.log(b);
 
-const main = (a,b, ...e)=> {
-    console.log(a);
-    console.log(b);
-    console.log(e);
-}
-let arrray = [1,2,3,4,5];
+// const main = (a,b, ...e)=> {
+//     console.log(a);
+//     console.log(b);
+//     console.log(e);
+// }
+// let arrray = [1,2,3,4,5];
 
-main(...arrray);
+// main(...arrray);
 
-const userId = (nmae,age)=> {
-    console.log(name);
-    console.log(age);
-}
+// const userId = (nmae,age)=> {
+//     console.log(name);
+//     console.log(age);
+// }
 
-let {name, age} = obj;
-userId(obj);
+// let {name, age} = obj;
+// userId(obj);
+
+
