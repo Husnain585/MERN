@@ -1,5 +1,10 @@
 {
+  "name": "To Do list",
+  "scripts": {
+    "start": "nodemon app"
+  },
   "dependencies": {
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7"
   }
 }
