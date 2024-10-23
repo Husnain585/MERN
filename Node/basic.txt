@@ -28,8 +28,28 @@ localhost -> host
 :3000 -> port
 base path and exact path mil kr api bnti hai
 koi bi data received krna ho tu hum api se krte hn
+=================================================================================================
+express is a fullstack framework 
+
+npm init express
 
 
+app.get
+app.post
+("path" , (req,res) => {
+    return res.send("welcome");
+})
 
+api -> application program interface
+
+frontend  se backend pr res or req ko use krna api ki madad se hota hai
+rest api are follow those principle which are predefined in req or res 
+
+
+rest apis -> get, post, put/patch, del
+patch api -> are used to modify minor changings 
+put api -> insert, update (new user will insert) (exsisting user will update his data)
+del api -> delete request 
+get api -> received data from backend (getallflower, getfeed)
 
 
