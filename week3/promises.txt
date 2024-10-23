@@ -1,0 +1,13 @@
+promise lifecycle
+promise have two state -> fulfill, pending state
+fulfill -> resolved , rejected
+pending -> pending  state
+
+promises use q krte hn => next output k le expected 
+syntax
+
+await is used in async function 
+
+obj promise arrow function destructuring
+using await 
+promises
