@@ -52,4 +52,13 @@ put api -> insert, update (new user will insert) (exsisting user will update his
 del api -> delete request 
 get api -> received data from backend (getallflower, getfeed)
 
+==================================Day2===================================================================
 
+controller and router are used to connect model with each other
+
+input receive krne k teen method
+params => mostly id are receive
+query => json obj
+body => json obj 
+get, delete receive data in query from
+put, patch, post receive data in body from
