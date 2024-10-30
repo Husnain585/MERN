@@ -5,6 +5,7 @@ const {
     updateUser
 } = require("../controller/userController")
 
+const {createValidator} = require("../validations/userValidator");
 
 userModule.get("/getUser", getUser);
 userModule.get("/createUser", createUser);
