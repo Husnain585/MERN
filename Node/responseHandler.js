@@ -1,14 +1,19 @@
-module.exports = (res, data) => {
+module.exports = (res, response) => {
     try {
+        if (response.error) {
+            throw error
+        }
         return res.send({
             status: 200,
-            data: data
+            data: response.response,
+            error: {},
         });
     } catch(error) {
         return res.send({
             status: 400,
             message: error,
-            data: {}
-        })
+            data: {},
+            error: error,
+        });
     }
 }

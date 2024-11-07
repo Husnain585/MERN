@@ -1,44 +1,49 @@
-
-// const createUser = (req, res) => {
-//     res.send("Controller page");
-// }
-
-// const getUser = (req, res) => {
-    //     res.send("Controller page");
-    // }
-    
-    // const updateUser = (req, res) => {
-        //     res.send("Controller page");
-        // }
-        
-        // module.exports = {createUser, getUser,  updateUser};
-        
-        
+const { createUser, getAllUser, updateUser, deleteUser } = require("../models/userModel");
+const { hash } = require("bcryptjs");
+const { v4: uuid } = require("uuid");     // assigning the name to specific package from uuid
+const responseHandler = require("../responseHandler");
+const { models } = require("../models");
 const { response } = require("express");
-const {hash} = require("bcryptjs");
 
 module.exports = {
-    createUser : async (req, res) => {
-        try{
-            req.body.password = await hash(req.body.password, 10);
-            return res.send({
-                status: "ok",
-                code: 200,
-                response: req.body
-            })
-        }catch(error){
-            return res.send({
-                status: "error",
-                code: 404,
-                error: "Request not found", 
-            })
+    create: async (req, res) => {
+        try {
+            const response = await createUser(req.body);
+            return responseHandler(res, response);
+        } catch (error) {
+            return responseHandler(res, { response: error });
         }
     },
-    getUser: (req, res) => {
-        console.log(req.query);
-        return res.send("Logout page at controller page");
+    getAll: async (req, res) => {
+        try {
+            const response = await getAllUser();
+            return responseHandler(res, response);
+        } catch (error) {
+            return responseHandler(res, {response: error});
+        }
     },
-    updateUser: (req, res) => {
-        return res.send("updateUser page at controller page");
+    getUser: async (req, res) => {
+        try {
+
+        } catch (error) {
+
+        }
+    },
+    update: async (req, res) => {
+        try {
+            const response = await updateUser(req.body);
+            return responseHandler(res, response);
+        } catch (error) {
+            console.log(error)
+            return responseHandler(res, {response : error});
+        }
+    },
+    deleteUser: async (req, res) => {
+        try {
+            const response = await deleteUser(req.query);
+            return responseHandler(res, req.query);
+        } catch (error) {
+            return responseHandler(res, {response : error});
+        }
     }
 };

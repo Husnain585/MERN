@@ -1,20 +1,22 @@
 const joi = require("joi");
-const create = joi.object({
+const CreateUser = joi.object({
     name: joi.string().required(),
     username: joi.string().alphanum().required(),
-    password: joi.string().min(3).max(18).required()
+    password: joi.string().required(),
+    email: joi.string().email().required(),
 });
-const update = joi.object({
-    name: joi.string().required(),
+const Update = joi.object({
     username: joi.string().alphanum().required(),
+    name: joi.string(),
+    email: joi.string().email(),
 });
-const getDelete = joi.object({
+const GetDelete = joi.object({
     username: joi.string().alphanum().required(),
 });
 module.exports = {
-     Create : async (req, res, next) => {
+     CreateMember : async (req, res, next) => {
         try{ 
-           await Create.validateAsync(req.body);
+           await CreateUser.validateAsync(req.body);
             next();
         }catch(error){
             return res.send({
@@ -24,7 +26,7 @@ module.exports = {
      },
      Update : async (req, res, next) => {
         try{
-           await this.Update.validateAsync(req.body);
+           await Update.validateAsync(req.body);
             next();
         }catch(error){
             return res.send({

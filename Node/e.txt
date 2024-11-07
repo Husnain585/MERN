@@ -1,0 +1,13 @@
+create: async (req, res) => {
+        try {
+            // req.body.userId = uuid();   // create unique id for user also return string
+            // req.body.password = await hash(req.body.password, 10);
+            // const response = await createUser(body);
+            // if (response.error) {
+            //     return errorHandler(res, response.error);
+            // }
+            // return responseHandler(res, response.response);
+        } catch (error) {
+            return errorHandler(res, error)
+        }
+    },

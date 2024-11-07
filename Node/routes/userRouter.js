@@ -1,15 +1,21 @@
-const userModule = require("express").Router();
+const userModel = require("express").Router();
+const {CreateMember, Update, GetDelete} = require("../validations/userValidator")
 const {
+    create,
+    getAll,
+    update,
     getUser,
-    createUser,
-    updateUser
+    deleteUser,
 } = require("../controller/userController")
 
 const {createValidator} = require("../validations/userValidator");
 
-userModule.get("/getUser", getUser);
-userModule.get("/createUser", createUser);
-userModule.get("/createUser",  updateUser);
-module.exports = userModule;
+
+userModel.get("/get-all", getAll);
+userModel.get("/get", getUser);
+userModel.post("/create", CreateMember, create);
+userModel.patch("/update", Update,update);
+userModel.get("/delete", GetDelete, deleteUser);
+module.exports = userModel;
 
 

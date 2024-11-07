@@ -1,0 +1,114 @@
+Dynamically vs statically typed languages & ECMAScript
+{
+In dynamically typed languages, the type of a variable is determined at runtime.
+ let x = 10; // x is a number
+x = "Hello"; // Now x is a string
+statically typed languages, the type of a variable is determined at compile time. This means you must declare the type of a variable before using it, and the compiler will enforce type safety.
+int age = 25; // Declaring an integer variable
+    float height = 5.9; // Declaring a float variable
+    char grade = 'A'; // Declaring a character variable
+}
+[
+Pros and cons of dynamic and static typing.
+Real-world examples of when each type system might be appropriate.
+How to use type annotations in ECMAScript (e.g., Flow, TypeScript).
+The trade-offs between flexibility and type safety.
+Your personal preferences and experiences with different typing systems.
+]***********************************************
+
+Variables, constants and console logs: let, var, const
+{
+var: The traditional way to declare variables in JavaScript. Variables declared with var have function scope, meaning they are accessible within the function where they are declared.
+let: Introduced in ES6, let has block scope, meaning it is accessible only within the block (code enclosed in curly braces) where it is declared. This helps prevent unintended variable overwriting.
+const: Also introduced in ES6, const is used to declare constants. The value of a constant cannot be reassigned.
+} 
+[
+    What is hoisting, and how does it affect var, let, and const
+]**************************************************
+
+Primitive data types in JS
+{
+    Primitive data types in JavaScript are immutable, meaning their values cannot be changed after they're created.
+there are seven different types of primitive data types in JavaScript way. The following are the types that are currently supported in JavaScript
+    Number
+    Null
+    string
+    Symbol
+    undefined
+    boolean
+    bigint
+}
+[
+    How are primitive values compared in JavaScript?
+]****************************************************
+
+Arithmetic and logical operators
+{
+    Arithmetic operators are used to perform mathematical operations on numbers.
+    :Addition,Subtraction,Multiplication,Division,Modulus(reminder 1,0),Increment,Decrement
+    key features:
+        Operator precedence
+        type coercion
+        Short-circuiting
+        Operator overloading
+}
+[
+    How can you use logical operators to create complex conditions?
+Explain the short-circuiting behavior of logical operators.
+]**************************************************
+
+ Operator precedence
+{
+    it follows the DMAS algorithm which is divid, Multiply,Addition and Subtraction
+}
+[
+    no question
+]******************************************************
+
+● Statement vs expression in JS
+{
+    every line of code is a Statement
+    every line of code is a expression when it return a value, argument or provide any value
+}
+[
+    no question
+]******************************************************
+
+● Template strings
+{
+
+}
+[
+    What are the advantages of using template strings over string concatenation?
+    Can you provide an example of a custom tagged template literal function?
+]
+
+● Type conversion and coercion
+{
+    Type conversion: Explicitly changing the data type of a value using built-in functions or operators.
+
+    Type coercion: Implicitly converting the data type of a value during certain operations.
+}
+[
+    How can you avoid unexpected type coercion in your code.
+]
+Explicit conversion vs Implicit conversion 
+{
+    Explicit conversion involves intentionally changing the data type of a value using built-in functions or operators. This gives you full control over the conversion process.
+    Number(),tostring(),boolean(), parseInt()
+    
+}
+● Truthy vs falsy values
+{
+    true and 1 are considered as truuthy values
+    fasle and 0 are considered as falsy values
+}
+● == vs ===
+{
+    == is check only value in the expression
+    === is check both value and it's datatype in the expression
+}
+● Short circuiting
+{
+    short circuiting && finds false first and second is of no  use. || finds true first 
+}
