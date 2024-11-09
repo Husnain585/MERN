@@ -1,13 +1,35 @@
-create: async (req, res) => {
-        try {
-            // req.body.userId = uuid();   // create unique id for user also return string
-            // req.body.password = await hash(req.body.password, 10);
-            // const response = await createUser(body);
-            // if (response.error) {
-            //     return errorHandler(res, response.error);
-            // }
-            // return responseHandler(res, response.response);
-        } catch (error) {
-            return errorHandler(res, error)
-        }
-    },
+id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+},
+name: {
+    type: DataTypes.STRING,
+    allowNull: false
+},
+description: {
+    type: DataTypes.TEXT,
+    allowNull: true
+},
+price: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: false
+},
+stockQuantity: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0
+},
+sku: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true
+},
+categoryId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+        model: 'Categories',  // Adjust based on Category model
+        key: 'id'
+    }
+}

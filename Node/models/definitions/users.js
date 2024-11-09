@@ -1,4 +1,4 @@
-const { DataTypes, Model } = require("sequelize");
+const { DataTypes, Model, Sequelize } = require("sequelize");
 const connection = require("../../dbConnection");
 const { string } = require("joi");
 const { v4: uuid } = require("uuid");
@@ -34,7 +34,7 @@ users.init(
         timestamps: true,
         paranoid: true,     // deleted at 
         sequelize: connection,
-    }
+    },
 );
 
 users.beforeCreate(async (user) => {

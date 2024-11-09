@@ -2,7 +2,14 @@ const connection = require("../dbConnection");
 
 const users = require("./definitions/users");
 
-const models = { users };   // all table are here after the execution
+const customer = require("./definitions/customer");
+
+const admin = require("./definitions/admin");
+const cart = require("./definitions/cart");
+const cartItem = require("./definitions/cartItem");
+const products = require("./definitions/products");
+
+const models = { users, customer, admin, cart, cartItem, products };   // all table are here after the execution
 
 // relations
 

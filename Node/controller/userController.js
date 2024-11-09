@@ -24,7 +24,7 @@ module.exports = {
     },
     getUser: async (req, res) => {
         try {
-
+            
         } catch (error) {
 
         }
