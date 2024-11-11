@@ -8,10 +8,15 @@ const admin = require("./definitions/admin");
 const cart = require("./definitions/cart");
 const cartItem = require("./definitions/cartItem");
 const products = require("./definitions/products");
+const vendor  = require("./definitions/vendor");
 
-const models = { users, customer, admin, cart, cartItem, products };   // all table are here after the execution
+
+
+const models = { users, customer, admin, cart, cartItem, products, vendor };   // all table are here after the execution
 
 // relations
+
+
 
 const db = {};
 

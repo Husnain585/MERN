@@ -1,4 +1,4 @@
-const { createUser, getAllUser, updateUser, deleteUser } = require("../models/userModel");
+const { createUser, getAllUser, updateUser, deleteUser, getUser } = require("../models/userModel");
 const { hash } = require("bcryptjs");
 const { v4: uuid } = require("uuid");     // assigning the name to specific package from uuid
 const responseHandler = require("../responseHandler");
@@ -24,9 +24,10 @@ module.exports = {
     },
     getUser: async (req, res) => {
         try {
-            
+            const user = await getUser(req.query);
+            return responseHandler(res, response);
         } catch (error) {
-
+            return responseHandler(res, {response: error});
         }
     },
     update: async (req, res) => {

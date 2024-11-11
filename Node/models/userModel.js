@@ -37,7 +37,7 @@ module.exports = {
     getUser : async ({userId, username}) => {
         try {
             const user = await models.users.findOne({
-                attributes: ["name", "username"],
+                attributes: ["name", "username", "password"],
                 where: {
                     ...(userId ? {userId: userId} : true ),
                     ...(username ? {username: username} : true ),

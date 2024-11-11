@@ -6,10 +6,10 @@ const {v4: uuid} = require("uuid");
 
 
 
-class products extends Model { }
+class attributes extends Model { }
 
-products.init({
-    productsId: {
+attributes.init({
+    attributesId: {
         type: DataTypes.INTEGER(),
         primaryKey: true,
         autoIncrement: true
@@ -18,26 +18,22 @@ products.init({
         type: DataTypes.STRING(),
         allowNull: false
     },
-    description: {
+    value: {
         type: DataTypes.TEXT(),
         allowNull: true
-    },
-    categoryId: {
-        type: DataTypes.STRING(),
-        allowNull: false,
     }
 },
     {
-        name: "products",
+        name: "attributes",
         timestamps: true,
         paranoid: true,
         sequelize: connection,
     },
 );
 
-products.beforeCreate(async (products) => {
-    products.productsId =  await uuid();
+attributes.beforeCreate(async (attributes) => {
+    attributes.attributesId =  await uuid();
 });
 
 
-module.exports = products;
+module.exports = attributes;

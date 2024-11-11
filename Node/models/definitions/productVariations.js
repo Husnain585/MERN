@@ -7,7 +7,7 @@ const {v4: uuid} = require("uuid");
 class productsVariations extends Model { }
 
 productsVariations.init({
-    productsVariations: {
+    productsVariationsId: {
         type: DataTypes.INTEGER(),
         primaryKey: true,
         autoIncrement: true
@@ -33,7 +33,7 @@ productsVariations.init({
     },
 );
 
-productsVariations.beforeCreate(async (user) => {
+productsVariations.beforeCreate(async (productsVariations) => {
     productsVariations.productsId = uuid();
 });
 

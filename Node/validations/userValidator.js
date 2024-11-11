@@ -11,10 +11,11 @@ const Update = joi.object({
     email: joi.string().email(),
 });
 const GetDelete = joi.object({
-    username: joi.string().alphanum().required(),
+    username: joi.string().required(),
+    // userId: joi.string().required(),
 });
 module.exports = {
-     CreateMember : async (req, res, next) => {
+     Create : async (req, res, next) => {
         try{ 
            await CreateUser.validateAsync(req.body);
             next();
