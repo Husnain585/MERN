@@ -4,6 +4,7 @@ const { string, types } = require("joi");
 const { sequelize } = require("./users");
 const {v4: uuid} = require("uuid");
 
+
 class products extends Model { }
 
 products.init({
