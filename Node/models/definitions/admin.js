@@ -8,47 +8,16 @@ class admin extends Model { }
 
 admin.init({
     adminId: {
-        type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        type: DataTypes.STRING(100),
     },
-    username: {
-        type: DataTypes.STRING,
+    name: {
+        type: DataTypes.STRING(100),
         allowNull: false,
-        unique: true
-    },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false
     },
     email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+        type: DataTypes.STRING(89),
     },
-    role: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue: 'admin'  // default role
-    },
-    permissions: {
-        type: DataTypes.JSON,  // or DataTypes.ARRAY(DataTypes.STRING)
-        allowNull: true,
-        defaultValue: ['read']  // default permissions
-    },
-    status: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: true  // active by default
-    },
-    lastLogin: {
-        type: DataTypes.DATE,
-        allowNull: true
-    },
-    phoneNumber: {
-        type: DataTypes.STRING,
-        allowNull: true
-    }
 },
     {
         name: "admin",
@@ -59,7 +28,7 @@ admin.init({
 );
 
 admin.beforeCreate(async (admin) => {
-    admin.adminId = uuid();
-})
+        admin.adminId =  await uuid();
+    });
 
 module.exports = admin;

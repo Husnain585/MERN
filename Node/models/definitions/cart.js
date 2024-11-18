@@ -2,38 +2,22 @@ const { DataTypes, Model } = require("sequelize");
 const connection = require("../../dbConnection");
 const { string, types } = require("joi");
 const { sequelize } = require("./users");
+const {v4: uuid} = require("uuid");
 
 class cart extends Model { }
 
 cart.init({
-    id: {
-        type: DataTypes.INTEGER,
+    adminId: {
         primaryKey: true,
-        autoIncrement: true
+        type: DataTypes.STRING(100),
     },
-    userId: {
-        type: DataTypes.INTEGER,
+    name: {
+        type: DataTypes.STRING(100),
         allowNull: false,
     },
-    productId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+    email: {
+        type: DataTypes.STRING(89),
     },
-    quantity: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        defaultValue: 1
-    },
-    status: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue: 'active'
-    },
-    addedAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: DataTypes.NOW
-    }
 },
     {
         name: "cart",
@@ -42,5 +26,9 @@ cart.init({
         sequelize: connection,
     },
 );
+
+cart.beforeCreate(async (cart) => {
+        cart.cartId =  await uuid();
+    });
 
 module.exports = cart;

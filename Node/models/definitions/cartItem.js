@@ -1,14 +1,17 @@
-const { DataTypes, Model } = require("sequelize");
-const connection = require("../../dbConnection");
-const { string, types } = require("joi");
 const { sequelize } = require("./users");
+const connection = require("../../dbConnection");
+const {v4 : uuid } = require("uuid");
+const { string, types } = require("joi");
+const { format } = require("morgan");
+const { models } = require("..");
+const { Model, DataTypes } = require("sequelize");
 
 class cartItem extends Model { }
 
 cartItem.init({
-    customerId: {
+    cartItemId: {
         primaryKey: true,
-        type: DataTypes.STRING(100),
+        type: DataTypes.STRING(),
     },
     name: {
         type: DataTypes.STRING(100),
@@ -23,7 +26,11 @@ cartItem.init({
         timestamps: true,
         paranoid: true,
         sequelize: connection,
-    },
+    }
 );
+
+cartItem.beforeCreate(async (cartItem) => {
+    cartItem.cartItemId = await uuid();
+});
 
 module.exports = cartItem;

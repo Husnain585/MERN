@@ -13,7 +13,7 @@ users.init(
             type: DataTypes.STRING(100),
         },
         name: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING(300),
             allowNull: false,
         },
         password: {
@@ -26,7 +26,7 @@ users.init(
             allowNull: false,
         },
         email: {
-            type: DataTypes.STRING(89),
+            type: DataTypes.STRING(100),
         },
     },
     {
