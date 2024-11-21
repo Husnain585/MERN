@@ -4,7 +4,7 @@ const {
     create,
     getAll,
     update,
-    getUser,
+    get,
     deleteUser,
 } = require("../controller/userController")
 
@@ -12,7 +12,7 @@ const {createValidator} = require("../validations/userValidator");
 
 
 userModel.get("/get-all",  getAll);
-userModel.get("/get", getUser);
+userModel.get("/get", get);
 userModel.post("/create", Create, create);
 userModel.patch("/update", Update,update);
 userModel.get("/delete", GetDelete, deleteUser);

@@ -14,6 +14,11 @@ const GetDelete = joi.object({
     username: joi.string().required(),
     // userId: joi.string().required(),
 });
+const getUser = joi.object({
+    username: joi.string().required(),
+    userId: joi.string().required(),
+});
+
 module.exports = {
      Create : async (req, res, next) => {
         try{ 
@@ -38,6 +43,16 @@ module.exports = {
      GetDelete : async (req, res, next) => {
         try{
            await GetDelete.validateAsync(req.query);
+            next();
+        }catch(error){
+            return res.send({
+                error: error,
+            });
+        }
+     },
+     getUser : async (req, res, next) => {
+        try{
+           await getUser.validateAsync(req.query);
             next();
         }catch(error){
             return res.send({

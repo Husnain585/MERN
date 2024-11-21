@@ -10,13 +10,6 @@ customer.init({
         primaryKey: true,
         type: DataTypes.STRING(100),
     },
-    name: {
-        type: DataTypes.STRING(100),
-        allowNull: false,
-    },
-    email: {
-        type: DataTypes.STRING(89),
-    },
 },
     {
         name: "customer",

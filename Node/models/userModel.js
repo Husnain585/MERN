@@ -34,14 +34,17 @@ module.exports = {
             }
         }
     },
-    getUser : async ({userId, username}) => {
+    get : async ({username, userId}) => {
         try {
             const user = await models.users.findOne({
-                attributes: ["name", "username", "password"],
+                attributes: ["name", "username", "email"], // to select specfic data member from database
+                // attributes: {
+                //     exclude: ["password", "createdAt", "updatedAt"],    // remove specific datamember 
+                // },
                 where: {
-                    ...(userId ? {userId: userId} : true ),
-                    ...(username ? {username: username} : true ),
-                }
+                    ...(userId ? {userId: userId} : true),
+                    ...(username ? {username: username} : true),
+                },   
             });
             return{
                 response: user,

@@ -1,36 +1,33 @@
-const { sequelize } = require("./users");
+const { DataTypes, Model } = require("sequelize");
 const connection = require("../../dbConnection");
-const {v4 : uuid } = require("uuid");
-const { string, types } = require("joi");
-const { format } = require("morgan");
-const { models } = require("..");
-const { Model, DataTypes } = require("sequelize");
+const { v4: uuid } = require("uuid");
 
-class products extends Model { }
+class Products extends Model {}
 
-products.init({
-    productsId: {
-        primaryKey: true,
-        type: DataTypes.STRING(),
-    },
-    name: {
-        type: DataTypes.STRING(100),
-        allowNull: false,
-    },
-    email: {
-        type: DataTypes.STRING(89),
-    },
-},
+Products.init(
     {
-        name: "products",
+        productId: {
+            primaryKey: true,
+            type: DataTypes.STRING(1000),
+        },
+        vendorId: {
+            type: DataTypes.STRING(1000),
+            references: {
+                model: "vendors", // Table name
+                key: "vendorId", // Column name
+            },
+        },
+    },
+    {
+        sequelize: connection,
+        modelName: "products",
         timestamps: true,
         paranoid: true,
-        sequelize: connection,
     }
 );
 
-products.beforeCreate(async (products) => {
-    products.productsId = await uuid();
+Products.beforeCreate(async (product) => {
+    product.productId = uuid();
 });
 
-module.exports = products;
+module.exports = Products;

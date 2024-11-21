@@ -1,39 +1,25 @@
-// const { DataTypes, Model } = require("sequelize");
-// const connection = require("../../dbConnection");
-// const { string, types } = require("joi");
-// const { sequelize } = require("./users");
-// const {v4: uuid} = require("uuid");
+const { DataTypes, Model } = require("sequelize");
+const connection = require("../../dbConnection");
+const {v4: uuid} = require("uuid");
 
+class attributes extends Model { }
 
+attributes.init({
+    attributeId: {
+        primaryKey: true,
+        type: DataTypes.STRING(100),
+    }
+},
+    {
+        name: "attributes",
+        timestamps: true,
+        paranoid: true,
+        sequelize: connection,
+    },
+);
 
-// class attributes extends Model { }
+attributes.beforeCreate(async (attributes) => {
+    attributes.attributeId =  await uuid();
+    });
 
-// attributes.init({
-//     attributesId: {
-//         type: DataTypes.STRING(),
-//         primaryKey: true,
-//         autoIncrement: true
-//     },
-//     name: {
-//         type: DataTypes.STRING(),
-//         allowNull: false
-//     },
-//     description: {
-//         type: DataTypes.TEXT(),
-//         allowNull: true
-//     },
-// },
-//     {
-//         name: "attributes",
-//         timestamps: true,
-//         paranoid: true,
-//         sequelize: connection,
-//     },
-// );
-
-// attributes.beforeCreate(async (attributes) => {
-//     attributes.attributesId =  await uuid();
-// });
-
-
-// module.exports = attributes;
+module.exports = attributes;
