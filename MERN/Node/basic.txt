@@ -1,0 +1,64 @@
+***********************************Node********************************
+what is node 
+js runtime environment
+node is js framework
+environment -> required packages
+framework means multiple library 
+library means multiple functions 
+npx execute all package and display output
+npm -> installation, update, uninstall
+installation -> npm i packageName
+update -> npm u/update packageName
+uninstall -> npm un/uninstall packageName
+import have to method -> as whole, as specific
+const express = require("express");
+const {sign, verifiy}= require("JsonwebToken");
+how to know which are packages are installed in the app?
+package.json -> file    
+package-lock.json -> file
+Node_Modules -> folder
+package lock.json -> is used to lock all packages which cannot be crashed
+Node_Modules have installed files
+express ko use krte hovy hum server create krye gye 
+backend pr sab chezye hum defined krte hn
+localhost:3000/user/getallflower/ -> is called endpoint
+user -> base path
+getallflower -> exact path
+localhost -> host
+:3000 -> port
+base path and exact path mil kr api bnti hai
+koi bi data received krna ho tu hum api se krte hn
+=================================================================================================
+express is a fullstack framework 
+
+npm init express
+
+
+app.get
+app.post
+("path" , (req,res) => {
+    return res.send("welcome");
+})
+
+api -> application program interface
+
+frontend  se backend pr res or req ko use krna api ki madad se hota hai
+rest api are follow those principle which are predefined in req or res 
+
+
+rest apis -> get, post, put/patch, del
+patch api -> are used to modify minor changings 
+put api -> insert, update (new user will insert) (exsisting user will update his data)
+del api -> delete request 
+get api -> received data from backend (getallflower, getfeed)
+
+==================================Day2===================================================================
+
+controller and router are used to connect model with each other
+
+input receive krne k teen method
+params => mostly id are receive
+query => json obj
+body => json obj 
+get, delete receive data in query from
+put, patch, post receive data in body from

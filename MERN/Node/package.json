@@ -1,0 +1,22 @@
+{
+  "name": "To Do list",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "dependencies": {
+    "audit": "^0.0.6",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "fix": "^0.0.6",
+    "joi": "^17.13.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7",
+    "pg": "^8.13.1",
+    "router": "^1.3.8",
+    "routes": "^2.1.0",
+    "sequelize": "^6.37.5",
+    "uuid": "^11.0.3"
+  }
+}
