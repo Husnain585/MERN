@@ -1,0 +1,14 @@
+{
+  "name": "Practice_Backend",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "Router": "^2.1.0",
+    "routes": "^2.1.0"
+  }
+}
