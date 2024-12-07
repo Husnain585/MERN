@@ -1,9 +1,8 @@
-const vendorRouter = require("express").Router();
+const routes = require("express").Router();
 
-const vendorModel = require("../models/vendorModel");
-const {create} = require("../controller/vendorController");
+const {create, } = require("../controller/vendorController");
 
-vendorRouter.post("/create", create);
-module.exports = vendorRouter;
+routes.post("/create", create);
+module.exports = routes;
 
 

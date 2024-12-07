@@ -10,7 +10,6 @@ const attributes = require("./definitions/attributes")
 const variationHasAttributes = require("./definitions/variationHasAttributes");
 const productVariations = require("./definitions/productsVariations");
 const productsVariations = require("./definitions/productsVariations");
-// const examples = require("./definitions/example");
 
 
 const models = { 
@@ -29,8 +28,8 @@ const models = {
 // relations
 
 // vendor product 1:M
-vendors.hasMany(products, {foreignKey: "vendorId"});
-products.belongsTo(vendors, {foreignKey: "vendorId"});
+vendors.hasMany(products, {foreignKey: "vendorId" });
+products.belongsTo(vendors, {foreignKey: "vendorId" });
 
 // product productVaiations 1:M
 products.hasMany(productsVariations, {foreignKey: "variationId"});

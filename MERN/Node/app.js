@@ -8,7 +8,7 @@ const connection = require("./dbConnection");
 const userModule = require("./routes/userRouter");
 const vendorRouter = require("./routes/vendorRouter");
 const productRouter = require("./routes/productRouter");
-
+const cors = require("cors");
 
 const app = express();
 app.use(bodyparser.urlencoded({ extended: true }))
@@ -17,6 +17,10 @@ app.use("/users", userModel);
 app.use("/author", auth);
 app.use("/vendor", vendorRouter);
 app.use("/product", productRouter);
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: false
+})) 
 
 app.get("/", (req, res) => {
 res.send("welcome");

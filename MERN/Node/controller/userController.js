@@ -1,6 +1,6 @@
 const { createUser, getAllUser, updateUser, deleteUser, get } = require("../models/userModel");
 const { hash } = require("bcryptjs");
-const { v4: uuid } = require("uuid");     // assigning the name to specific package from uuid
+const { v4: uuid } = require("uuid");
 const responseHandler = require("../responseHandler");
 const { models } = require("../models");
 const { response } = require("express");
